@@ -1,14 +1,11 @@
 FROM ruby:2.3
 
-RUN apt-get update && apt-get -y install rsyslog cron
-
-ADD Gemfile /tmp
-ADD Gemfile.lock /tmp
-WORKDIR /tmp
-RUN bundle install
+RUN apt-get update && apt-get -y install rsyslog cron mysql-client
 
 WORKDIR /app
-ADD . /app
-RUN crontab /app/crontabfile && touch /var/log/cron.log && cp -rf ./config/.profile /root/.profile && chmod +x ./scripts/run.sh
 
-CMD ["bash","/app/scripts/run.sh"]
+ADD Gemfile Gemfile.lock ./
+RUN bundle install --deployment --without development:test --jobs 4
+
+ADD . /app
+CMD bundle exec ./scheduler.rb

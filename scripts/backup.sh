@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo $DB_HOST
-echo $DB_USER
-echo $DB_PASSWORD
+echo $DB_HOST, $DB_USER, $DB_PASSWORD
 databases=`mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD -e "SHOW DATABASES;" | tr -d "| " | grep -v Database`
 
 for db in $databases; do

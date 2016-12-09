@@ -1,4 +1,0 @@
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
-* *   * * *  /bin/bash /app/scripts/exec.sh >> /var/log/cron.log 2>&1

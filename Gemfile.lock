@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://gems.ruby-china.org/
   specs:
     domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
@@ -7,7 +7,6 @@ GEM
       domain_name (~> 0.5)
     json (1.8.3)
     mime-types (2.99.3)
-    mysql (2.9.1)
     netrc (0.11.0)
     qiniu (6.8.1)
       json (~> 1.8)
@@ -19,6 +18,11 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     ruby-hmac (0.4.0)
+    rufus-scheduler (3.3.1)
+      tzinfo
+    thread_safe (0.3.5)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
@@ -27,8 +31,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  mysql
   qiniu
+  rufus-scheduler
 
 BUNDLED WITH
    1.13.6
